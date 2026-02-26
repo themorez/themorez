@@ -38,7 +38,7 @@ const HeroSection = () => {
             </a>
             <Button
               variant="outline"
-              className="rounded-full px-8 py-4 md:px-10 md:py-6 text-base font-medium text-muted-foreground hover:text-accent hover:border-accent transition-all hover:scale-105"
+              className="animate-gentle-bounce rounded-full px-8 py-4 md:px-10 md:py-6 text-base font-medium text-muted-foreground hover:text-accent hover:border-accent transition-all hover:scale-105"
               onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
             >
               See Works
