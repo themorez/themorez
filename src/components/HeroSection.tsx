@@ -38,9 +38,9 @@ const HeroSection = () => {
             </a>
             <button
               onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 rounded-full border border-border bg-background/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-6 text-muted-foreground hover:text-accent hover:border-accent transition-all hover:scale-105"
+              className="flex items-center gap-2 rounded-full border border-border bg-background/80 backdrop-blur-sm px-8 py-4 md:px-10 md:py-6 text-base font-medium text-muted-foreground hover:text-accent hover:border-accent transition-all hover:scale-105"
             >
-              <span className="text-sm font-medium">See Works</span>
+              See Works
               <ArrowDown className="w-4 h-4 animate-[bounce_2s_infinite]" />
             </button>
           </div>
