@@ -20,7 +20,7 @@ const HeroSection = () => {
             <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground animate-slide-down">
               <span className="font-semibold text-lg text-accent">Web Designer</span> • English Graduate • Scholar • Translator
             </p>
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-normal leading-[1.1] tracking-normal animate-slide-down" style={{ fontFamily: "'Dancing Script', cursive" }}>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light leading-[1.1] tracking-tight animate-slide-down">
               Mohammad Amin{" "}
               <span className="text-accent">Rezaie</span>
             </h1>
