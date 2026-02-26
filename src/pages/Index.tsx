@@ -10,6 +10,8 @@ import screenshotRezaeiSaffron from "@/assets/screenshot-rezaei-saffron.png";
 import screenshotRezaeiSaffronEn from "@/assets/screenshot-rezaei-saffron-en.png";
 import screenshotGandomak from "@/assets/screenshot-gandomak.png";
 import screenshotAcademiapen from "@/assets/screenshot-academiapen.png";
+import screenshotTarjomeLand from "@/assets/screenshot-tarjome-land.png";
+import screenshotPersonalProfile from "@/assets/screenshot-personal-profile.png";
 
 const showcaseProjects = [
   {
@@ -39,8 +41,14 @@ const showcaseProjects = [
   {
     title: "Tarjome Land",
     description: "An AI-free translation service, done by a master's degree in English.",
-    image: "/placeholder.svg",
+    image: screenshotTarjomeLand,
     url: "https://tarjome-land.ir/",
+  },
+  {
+    title: "Personal Profile",
+    description: "Personal academic profile and portfolio website.",
+    image: screenshotPersonalProfile,
+    url: "https://maminrezaie.github.io",
   },
 ];
 

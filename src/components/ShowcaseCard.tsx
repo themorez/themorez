@@ -27,7 +27,7 @@ const ShowcaseCard = ({ title, description, image, url }: ShowcaseCardProps) => 
         <div className="absolute inset-0 p-6 flex flex-col justify-between">
           <div className="flex items-start justify-between">
             <span className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-accent/80 text-accent-foreground">
-              Web Store
+              Web Site
             </span>
           </div>
 
