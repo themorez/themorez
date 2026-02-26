@@ -209,6 +209,7 @@ const Index = () => {
                 <li><a href="https://t.me/maminre" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Telegram</a></li>
                 <li><a href="https://instagram.com/maminrezai" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Instagram</a></li>
                 <li><a href="https://x.com/AminReformist" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">X / Twitter</a></li>
+                <li><a href="https://wa.me/qr/ERDSPOB6INRHP1" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">WhatsApp</a></li>
               </ul>
             </div>
             <div>
