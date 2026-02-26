@@ -1,9 +1,10 @@
 
 
-## Plan: Add WhatsApp to Footer Social Links
+## Plan: Add introductory text to the About page hero section
 
 ### Change
 
-**`src/pages/Index.tsx`**
-- In the footer's "Connect" section (around line 171), add a new `<li>` with a WhatsApp link pointing to `https://wa.me/qr/ERDSPOB6INRHP1` after the existing X / Twitter entry.
+**`src/pages/About.tsx`**
+- Add a new `<p>` tag after the existing subtitle (line 17-18) inside the hero section with the provided text: *"I work at the intersection of literary studies, critical theory, and translation—supported by a strong background in academic research and English language teaching."*
+- Style it similarly to the existing subtitle with `text-lg text-muted-foreground leading-relaxed` and a staggered animation.
 
