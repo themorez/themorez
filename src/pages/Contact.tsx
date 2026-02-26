@@ -1,50 +1,8 @@
 import Header from "@/components/Header";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { toast } from "sonner";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const res = await fetch("https://www.form-to-email.com/api/s/jwy5OgVihTZp", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }).toString(),
-      });
-      if (!res.ok) throw new Error("Failed to send");
-      toast.success("Message sent! I'll get back to you soon.");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
@@ -64,25 +22,25 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="rounded-2xl bg-card p-8">
             <h2 className="text-2xl font-bold mb-6">Send me a message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6 animate-slide-up stagger-2">
+            <form action="https://www.form-to-email.com/api/s/jwy5OgVihTZp" method="POST" encType="multipart/form-data" className="space-y-6 animate-slide-up stagger-2">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Your name" />
+                <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Your name" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring" placeholder="your.email@example.com" />
+                <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring" placeholder="your.email@example.com" />
               </div>
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring" placeholder="What's this about?" />
+                <input type="text" id="subject" name="subject" required className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring" placeholder="What's this about?" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={6} className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none" placeholder="Tell me what's on your mind..." />
+                <textarea id="message" name="message" required rows={6} className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none" placeholder="Tell me what's on your mind..." />
               </div>
-              <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full py-6">
-                <Send className="mr-2 h-4 w-4" /> {isSubmitting ? "Sending..." : "Send Message"}
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full py-6">
+                <Send className="mr-2 h-4 w-4" /> Send Message
               </Button>
             </form>
           </div>
