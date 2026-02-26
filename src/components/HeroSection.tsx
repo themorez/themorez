@@ -21,32 +21,28 @@ const HeroSection = () => {
             <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground animate-slide-down">
               <span className="font-semibold text-lg text-accent">Web Designer</span> • English Graduate • Scholar • Translator
             </p>
-            <div className="flex items-start gap-4">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-light leading-[1.1] tracking-tight animate-slide-down">
-                Mohammad Amin{" "}
-                <span className="text-accent">Rezaie</span>
-              </h1>
-              <button
-                onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
-                className="hidden md:flex flex-col items-center gap-2 px-3 py-4 rounded-full border border-border bg-background/80 backdrop-blur-sm text-muted-foreground hover:text-accent hover:border-accent transition-all hover:scale-105 animate-slide-up shrink-0 mt-2"
-              >
-                <span className="text-[10px] font-semibold uppercase tracking-widest leading-tight text-center">
-                  See<br />Works
-                </span>
-                <ArrowDown className="w-3.5 h-3.5 animate-[bounce_2s_infinite]" />
-              </button>
-            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light leading-[1.1] tracking-tight animate-slide-down">
+              Mohammad Amin{" "}
+              <span className="text-accent">Rezaie</span>
+            </h1>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl animate-slide-up stagger-1">
               I do website & Webstore building & updating paired with full support after delivery. I also do social media post creation.                    
             </p>
           </div>
 
-          <div className="flex items-start sm:items-center gap-4 md:gap-6 pt-4 animate-slide-up stagger-2">
+          <div className="flex flex-row items-center gap-4 md:gap-6 pt-4 animate-slide-up stagger-2">
             <a href="/contact">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 py-4 md:px-10 md:py-6 text-base font-medium transition-all hover:scale-105 w-full sm:w-auto">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 py-4 md:px-10 md:py-6 text-base font-medium transition-all hover:scale-105">
                 Get in Touch
               </Button>
             </a>
+            <button
+              onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
+              className="flex items-center gap-2 rounded-full border border-border bg-background/80 backdrop-blur-sm px-6 py-4 md:px-8 md:py-6 text-muted-foreground hover:text-accent hover:border-accent transition-all hover:scale-105"
+            >
+              <span className="text-sm font-medium">See Works</span>
+              <ArrowDown className="w-4 h-4 animate-[bounce_2s_infinite]" />
+            </button>
           </div>
         </div>
       </div>
