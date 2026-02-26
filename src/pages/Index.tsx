@@ -4,6 +4,7 @@ import ShowcaseCard from "@/components/ShowcaseCard";
 import HeroSection from "@/components/HeroSection";
 import IntroSection from "@/components/IntroSection";
 import { fetchPosts, stripHtml, formatDate, getFeaturedImage, getPostCategories } from "@/lib/wordpress";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { ArrowUpRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import screenshotRezaeiSaffron from "@/assets/screenshot-rezaei-saffron.png";
@@ -77,9 +78,9 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {showcaseProjects.map((project, index) => (
-              <div key={project.title} className={`animate-slide-up stagger-${Math.min(index + 1, 6)}`}>
+              <AnimateOnScroll key={project.title} delay={index * 100}>
                 <ShowcaseCard {...project} />
-              </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </section>
