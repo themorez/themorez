@@ -20,12 +20,12 @@ const HeroSection = () => {
             <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground animate-slide-down">
               <span className="font-semibold text-lg text-accent">Web Designer</span> • English Graduate • Scholar • Translator
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light leading-[1.1] tracking-tight animate-slide-down">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight animate-slide-down">
               Mohammad Amin{" "}
               <span className="text-accent">Rezaie</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl animate-slide-up stagger-1">
-              I do website & Webstore building & updating with full support after delivery. I also do social media post creation.                    
+              I do website & Webstore building & updating paired with full support after delivery. I also do social media post creation.                    
             </p>
           </div>
 
