@@ -41,7 +41,7 @@ const HeroSection = () => {
               className="rounded-full px-8 py-4 md:px-10 md:py-6 text-base font-medium transition-all hover:scale-105 w-full sm:w-auto"
               onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              See My Work <ArrowDown className="w-4 h-4 ml-1" />
+              See Works <ArrowDown className="w-4 h-4 ml-1" />
             </Button>
           </div>
         </div>
