@@ -176,7 +176,8 @@ const Index = () => {
             <p className="text-xl text-muted-foreground leading-relaxed">
               Interested in collaboration, translation work, or academic projects? Feel free to reach out.
             </p>
-            <form action="https://www.form-to-email.com/api/s/jwy5OgVihTZp" method="POST" encType="multipart/form-data" className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <iframe name="hidden_iframe_index" style={{display:'none'}}></iframe>
+            <form action="https://www.form-to-email.com/api/s/jwy5OgVihTZp" method="POST" encType="multipart/form-data" target="hidden_iframe_index" className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input type="hidden" name="name" value="Website Subscriber" />
               <input type="hidden" name="message" value="New subscriber from website" />
               <input

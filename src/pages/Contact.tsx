@@ -1,8 +1,19 @@
+import { useState, useRef } from "react";
 import Header from "@/components/Header";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = () => {
+    setTimeout(() => {
+      setSubmitted(true);
+      formRef.current?.reset();
+    }, 1000);
+  };
+
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
@@ -22,7 +33,14 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="rounded-2xl bg-card p-8">
             <h2 className="text-2xl font-bold mb-6">Send me a message</h2>
-            <form action="https://www.form-to-email.com/api/s/jwy5OgVihTZp" method="POST" encType="multipart/form-data" className="space-y-6 animate-slide-up stagger-2">
+            <iframe name="hidden_iframe_contact" style={{display:'none'}}></iframe>
+            {submitted && (
+              <div className="flex items-center gap-2 p-4 rounded-lg bg-accent/20 text-accent-foreground mb-4">
+                <CheckCircle className="w-5 h-5 text-accent" />
+                <span className="font-medium">Your message has been sent!</span>
+              </div>
+            )}
+            <form ref={formRef} action="https://www.form-to-email.com/api/s/jwy5OgVihTZp" method="POST" encType="multipart/form-data" target="hidden_iframe_contact" onSubmit={handleSubmit} className="space-y-6 animate-slide-up stagger-2">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
                 <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Your name" />
