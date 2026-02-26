@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
 import portraitImg from "@/assets/portrait-4.jpg";
 
 const HeroSection = () => {
@@ -35,11 +36,13 @@ const HeroSection = () => {
                 Get in Touch
               </Button>
             </a>
-            <a href="/#showcase">
-              <Button variant="outline" className="rounded-full px-8 py-4 md:px-10 md:py-6 text-base font-medium transition-all hover:scale-105 w-full sm:w-auto">
-                See My Work
-              </Button>
-            </a>
+            <Button
+              variant="outline"
+              className="rounded-full px-8 py-4 md:px-10 md:py-6 text-base font-medium transition-all hover:scale-105 w-full sm:w-auto"
+              onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              See My Work <ArrowDown className="w-4 h-4 ml-1" />
+            </Button>
           </div>
         </div>
       </div>
