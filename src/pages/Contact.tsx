@@ -24,6 +24,7 @@ const Contact = () => {
         body: new URLSearchParams({
           name: formData.name,
           email: formData.email,
+          subject: formData.subject,
           message: formData.message,
         }).toString(),
       });
