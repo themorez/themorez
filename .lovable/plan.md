@@ -1,24 +1,18 @@
+## Plan: Add hidden iframe target to prevent page redirect on form submission
 
-
-## Plan: Switch forms to native HTML submission
+Both forms currently redirect the user away from the site when submitted. By adding a hidden `<iframe>` as the form `target`, the redirect happens invisibly inside the iframe.
 
 ### Changes
 
-**`src/pages/Contact.tsx`**
-- Remove `useState` for `isSubmitting` and the `handleSubmit` function
-- Remove `toast` import (no longer needed)
-- Change `<form>` to use `action="https://www.form-to-email.com/api/s/jwy5OgVihTZp"`, `method="POST"`, `enctype="multipart/form-data"`, and remove `onSubmit`
-- Remove `value` and `onChange` bindings from inputs (no longer controlled)
-- Simplify the submit button (remove `disabled={isSubmitting}` and dynamic text)
+`**src/pages/Contact.tsx**`
 
-**`src/pages/Index.tsx`**
-- Remove `subEmail` and `isSubmitting` state, and `handleSubscribe` function
-- Remove `toast` import
-- Change the newsletter `<form>` to use `action`, `method="POST"`, `enctype="multipart/form-data"`
-- Add hidden inputs for `name` ("Website Subscriber") and `message` ("New subscriber from website")
-- Change email input `name` to `"email"` and remove controlled value/onChange
-- Simplify the submit button
+- Add `<iframe name="hidden_iframe" style={{display:'none'}}></iframe>` inside the component
+- Add `target="hidden_iframe"` to the `<form>` tag
 
-### Why native form
-The `form-to-email.com` service redirects to a bot-check/success page, which blocks AJAX (CORS). Native HTML form submission lets the browser follow the redirect naturally.
+`**src/pages/Index.tsx**`
 
+- Add `<iframe name="hidden_iframe" style={{display:'none'}}></iframe>` inside the component
+- Add `target="hidden_iframe"` to the newsletter `<form>` tag
+
+After the contact form submits, use the form's `onSubmit` event to set a `submitted` state to `true` after a 1 second delay, then show a success message like 'Your message has been sent!' and reset the form fields. Don't use fetch — just use `setTimeout` with `setState`.  
+This keeps native HTML submission (no CORS issues) while preventing the user from being redirected away.
