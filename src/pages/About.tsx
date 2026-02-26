@@ -16,6 +16,9 @@ const About = () => {
           <p className="text-lg text-muted-foreground leading-relaxed animate-slide-up stagger-1">
             English Graduate • Scholar • Translator • Web Designer
           </p>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto animate-slide-up stagger-2">
+            I work at the intersection of literary studies, critical theory, and translation—supported by a strong background in academic research and English language teaching.
+          </p>
         </div>
 
         {/* Bio Section */}
