@@ -20,36 +20,42 @@ const showcaseProjects = [
     description: "E-commerce storefront showcasing saffron products with a clean catalog experience and product details.",
     image: screenshotRezaeiSaffron,
     url: "https://rezaei-saffron.ir/",
+    label: "Web Store",
   },
   {
     title: "Rezaei Saffron (English)",
     description: "English version of the Rezaei Saffron store, serving international customers with the same polished experience.",
     image: screenshotRezaeiSaffronEn,
     url: "https://rezaei-saffron.ir/en/",
+    label: "Web Store",
   },
   {
     title: "Gandomak Shop",
     description: "Online shop with product browsing and a simple purchase flow—built to be fast and mobile friendly.",
     image: screenshotGandomak,
     url: "https://gandomakshop.ir/",
+    label: "Web Store",
   },
   {
     title: "AcademiaPen",
     description: "A professional academic writing service for humanities sciences—papers and theses written by humans.",
     image: screenshotAcademiapen,
     url: "https://academiapen.ir/",
+    label: "Web Site",
   },
   {
     title: "Tarjome Land",
     description: "An AI-free translation service, done by a master's degree in English.",
     image: screenshotTarjomeLand,
     url: "https://tarjome-land.ir/",
+    label: "Web Site",
   },
   {
     title: "Personal Profile",
     description: "Personal academic profile and portfolio website.",
     image: screenshotPersonalProfile,
     url: "https://maminrezaie.github.io",
+    label: "Web Site",
   },
 ];
 
