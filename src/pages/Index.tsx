@@ -76,8 +76,10 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {showcaseProjects.map((project) => (
-              <ShowcaseCard key={project.title} {...project} />
+            {showcaseProjects.map((project, index) => (
+              <div key={project.title} className={`animate-slide-up stagger-${Math.min(index + 1, 6)}`}>
+                <ShowcaseCard {...project} />
+              </div>
             ))}
           </div>
         </section>
