@@ -30,8 +30,8 @@ const HeroSection = () => {
                 onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
                 className="hidden md:flex flex-col items-center gap-2 px-3 py-4 rounded-full border border-border bg-background/80 backdrop-blur-sm text-muted-foreground hover:text-accent hover:border-accent transition-all hover:scale-105 animate-slide-up shrink-0 mt-2"
               >
-                <span className="text-[10px] font-semibold uppercase tracking-widest [writing-mode:vertical-lr] rotate-180">
-                  Scroll
+                <span className="text-[10px] font-semibold uppercase tracking-widest [writing-mode:vertical-lr] rotate-180 leading-tight text-center">
+                  See<br />Works
                 </span>
                 <ArrowDown className="w-3.5 h-3.5 animate-[bounce_2s_infinite]" />
               </button>
