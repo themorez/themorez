@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -16,6 +18,20 @@ const Header = () => {
       document.documentElement.classList.add("dark");
     }
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 80 && currentScrollY > lastScrollY) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -31,7 +47,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 py-2 sm:py-4">
+    <header className={`fixed top-0 left-0 right-0 z-50 py-2 sm:py-4 transition-all duration-300 ${hidden ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}`}>
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 pill-nav px-4 sm:px-6">
           {/* Logo */}
