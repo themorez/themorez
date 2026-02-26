@@ -58,9 +58,6 @@ const Index = () => {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Intro Section */}
-        <IntroSection />
-
         {/* Showcase Section */}
         <section id="showcase" className="py-12">
           <div className="flex items-center justify-between mb-12">
@@ -76,6 +73,9 @@ const Index = () => {
             ))}
           </div>
         </section>
+
+        {/* Intro Section */}
+        <IntroSection />
 
         {/* Featured Blog Posts */}
         <section id="articles" className="py-12">
