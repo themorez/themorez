@@ -25,7 +25,7 @@ const HeroSection = () => {
               <span className="text-accent">Rezaie</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl animate-slide-up stagger-1">
-              I work at the intersection of literary studies, critical theory, and translation—supported by a strong background in academic research and English language teaching.
+              I do website & Webstore building & updating with full support after delivery. I also do social media post creation.                    
             </p>
           </div>
 
