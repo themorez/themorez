@@ -59,7 +59,7 @@ const Index = () => {
         <HeroSection />
 
         {/* Showcase Section */}
-        <section id="showcase" className="py-12">
+        <section id="showcase" className="pt-0 pb-12">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Showcase</h2>
             <span className="text-sm font-medium text-muted-foreground px-4 py-2">
