@@ -18,7 +18,7 @@ const HeroSection = () => {
         <div className="flex flex-col justify-center space-y-6 md:space-y-8">
           <div className="space-y-4 md:space-y-6">
             <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground animate-slide-down">
-              English Graduate • Scholar • Translator • Web Designer
+              <span style={{ color: '#CC5500' }}>Web Designer</span> • English Graduate • Scholar • Translator
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight animate-slide-down">
               Mohammad Amin{" "}
