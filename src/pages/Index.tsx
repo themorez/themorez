@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Header from "@/components/Header";
-import { toast } from "sonner";
 import ShowcaseCard from "@/components/ShowcaseCard";
 import HeroSection from "@/components/HeroSection";
 import IntroSection from "@/components/IntroSection";
@@ -62,28 +60,6 @@ const showcaseProjects = [
 ];
 
 const Index = () => {
-  const [subEmail, setSubEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const res = await fetch("https://www.form-to-email.com/api/s/jwy5OgVihTZp", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ name: "Website Subscriber", email: subEmail, message: "New subscriber from website" }).toString(),
-      });
-      if (!res.ok) throw new Error("Failed");
-      toast.success("Subscribed! Thanks for connecting.");
-      setSubEmail("");
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   const { data, isLoading } = useQuery({
     queryKey: ["wp-posts-home"],
     queryFn: () => fetchPosts({ per_page: 6 })
@@ -200,17 +176,18 @@ const Index = () => {
             <p className="text-xl text-muted-foreground leading-relaxed">
               Interested in collaboration, translation work, or academic projects? Feel free to reach out.
             </p>
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form action="https://www.form-to-email.com/api/s/jwy5OgVihTZp" method="POST" encType="multipart/form-data" className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input type="hidden" name="name" value="Website Subscriber" />
+              <input type="hidden" name="message" value="New subscriber from website" />
               <input
                 type="email"
+                name="email"
                 required
-                value={subEmail}
-                onChange={(e) => setSubEmail(e.target.value)}
                 placeholder="Your email"
                 className="flex-1 px-6 py-4 rounded-full border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
               />
-              <button type="submit" disabled={isSubmitting} className="px-10 py-4 rounded-full bg-accent text-accent-foreground font-medium hover:bg-accent/90 hover:scale-105 transition-all disabled:opacity-50">
-                {isSubmitting ? "Sending..." : "Subscribe"}
+              <button type="submit" className="px-10 py-4 rounded-full bg-accent text-accent-foreground font-medium hover:bg-accent/90 hover:scale-105 transition-all">
+                Subscribe
               </button>
             </form>
           </div>
