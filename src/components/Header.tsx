@@ -57,7 +57,7 @@ const Header = () => {
                 <div className="w-7 h-7 sm:w-8 sm:h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-primary-foreground font-bold text-base sm:text-lg">Mo</span>
                 </div>
-                <span className="text-base sm:text-xl font-bold font-serif truncate">M.A. Rezaie</span>
+                <span className="text-base sm:text-xl font-bold font-serif truncate">A. Rezaie</span>
               </a>
             </div>
 
